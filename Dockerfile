@@ -1,7 +1,5 @@
 FROM runpod/worker-comfyui:5.5.0-base
 
-RUN hf auth login --token ${HF_TOKEN}
-
 # --- ComfyUI NODES ---
 RUN comfy node install --exit-on-fail comfyui-easy-use@1.3.4
 
