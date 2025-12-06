@@ -39,29 +39,22 @@ RUN comfy model download \
 
 # --- PRIVATE MODELS THROUGH HUGGINGFACE-CLI ---
 
-# Пример: скачивание LoRA из приватного репозитория user/private-loras
-# ЗАМЕНИ пути на свои
 RUN hf download ananona/dependencies \
-    --include sara_lora_000002500.safetensors \
-    --local-dir /comfyui/models/lora \
-    --local-dir-use-symlinks False
+    sara_lora_000002500.safetensors \
+    --local-dir /comfyui/models/lora 
 
 RUN hf download ibuildproducts/instagirlv2 \
-    --include Instagirlv2.0_hinoise.safetensors \
-    --local-dir /comfyui/models/lora \
-    --local-dir-use-symlinks False
+    Instagirlv2.0_hinoise.safetensors \
+    --local-dir /comfyui/models/lora 
 
 RUN hf download ibuildproducts/instagirlv2 \
-    --include Instagirlv2.0_lownoise.safetensors \
-    --local-dir /comfyui/models/lora \
-    --local-dir-use-symlinks False
+    Instagirlv2.0_lownoise.safetensors \
+    --local-dir /comfyui/models/lora 
 
 RUN hf download ananona/dependencies \
-    --include WAN2.2-HighNoise_SmartphoneSnapshotPhotoReality_v3_by-AI_Characters.safetensors \
-    --local-dir /comfyui/models/lora \
-    --local-dir-use-symlinks False
+    WAN2.2-HighNoise_SmartphoneSnapshotPhotoReality_v3_by-AI_Characters.safetensors \
+    --local-dir /comfyui/models/lora 
 
 RUN hf download ananona/dependencies \
-    --include WAN2.2-LowNoise_SmartphoneSnapshotPhotoReality_v3_by-AI_Characters.safetensors \
-    --local-dir /comfyui/models/lora \
-    --local-dir-use-symlinks False
+    WAN2.2-LowNoise_SmartphoneSnapshotPhotoReality_v3_by-AI_Characters.safetensors \
+    --local-dir /comfyui/models/lora 
