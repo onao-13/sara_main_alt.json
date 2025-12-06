@@ -2,11 +2,10 @@ FROM runpod/worker-comfyui:5.5.0-base
 
 # --- HUGGINGFACE TOKEN ---
 ARG HF_TOKEN
-ENV HUGGINGFACE_HUB_TOKEN=${HF_TOKEN}
 
 # --- Login to Hugginface ---
 RUN curl -LsSf https://hf.co/cli/install.sh | bash
-RUN hf auth login --token $HF_TOKEN
+RUN hf auth login --token ${HF_TOKEN}
 
 # --- ComfyUI NODES ---
 RUN comfy node install --exit-on-fail comfyui-easy-use@1.3.4
