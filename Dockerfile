@@ -1,11 +1,10 @@
 FROM runpod/worker-comfyui:5.5.0-base
 
-RUN env
-
 # --- HUGGINGFACE TOKEN ---
 ARG HF_TOKEN
-ENV HF_TOKEN=
+ENV HF_TOKEN=${HF_TOKEN}
 
+RUN env
 # --- Login to Hugginface ---
 RUN curl -LsSf https://hf.co/cli/install.sh | bash
 RUN hf auth login --token ${HF_TOKEN}
