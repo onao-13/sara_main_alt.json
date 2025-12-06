@@ -1,12 +1,5 @@
 FROM runpod/worker-comfyui:5.5.0-base
 
-# --- HUGGINGFACE TOKEN ---
-ARG HF_TOKEN
-ENV HF_TOKEN=${HF_TOKEN}
-
-RUN env
-# --- Login to Hugginface ---
-RUN curl -LsSf https://hf.co/cli/install.sh | bash
 RUN hf auth login --token ${HF_TOKEN}
 
 # --- ComfyUI NODES ---
@@ -38,25 +31,5 @@ RUN comfy model download \
     --relative-path models/diffusion_models \
     --filename wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors
 
-
-# --- PRIVATE MODELS THROUGH HUGGINGFACE-CLI ---
-
-RUN hf download ananona/dependencies \
-    sara_lora_000002500.safetensors \
-    --local-dir /comfyui/models/lora 
-
-RUN hf download ibuildproducts/instagirlv2 \
-    Instagirlv2.0_hinoise.safetensors \
-    --local-dir /comfyui/models/lora 
-
-RUN hf download ibuildproducts/instagirlv2 \
-    Instagirlv2.0_lownoise.safetensors \
-    --local-dir /comfyui/models/lora 
-
-RUN hf download ananona/dependencies \
-    WAN2.2-HighNoise_SmartphoneSnapshotPhotoReality_v3_by-AI_Characters.safetensors \
-    --local-dir /comfyui/models/lora 
-
-RUN hf download ananona/dependencies \
-    WAN2.2-LowNoise_SmartphoneSnapshotPhotoReality_v3_by-AI_Characters.safetensors \
-    --local-dir /comfyui/models/lora 
+# --- RUN POD --- 
+CMD ["/entrypoint.sh"]
