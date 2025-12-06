@@ -1,8 +1,9 @@
 FROM alpine:3.14
 
 # --- HUGGINGFACE TOKEN ---
-ARG RUNPOD_SECRET_hf_token
-ENV HF_TOKEN=${RUNPOD_SECRET_hf_token}
+# ARG RUNPOD_SECRET_hf_token
+# ENV HF_TOKEN=${RUNPOD_SECRET_hf_token}
 
 RUN env
+RUN echo "\n"
 RUN env | grep RUNPOD
