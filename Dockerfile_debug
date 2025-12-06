@@ -1,9 +1,6 @@
 FROM alpine:3.14
 
-# --- HUGGINGFACE TOKEN ---
-# ARG RUNPOD_SECRET_hf_token
-# ENV HF_TOKEN=${RUNPOD_SECRET_hf_token}
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-RUN env
-RUN echo "\n"
-RUN env | grep RUNPOD
+CMD ["/entrypoint.sh"]
