@@ -1,8 +1,8 @@
 FROM runpod/worker-comfyui:5.5.0-base
 
 # --- HUGGINGFACE TOKEN ---
-ARG RUNPOD_SECRET_HF_TOKEN
-ENV HUGGINGFACE_HUB_TOKEN=${RUNPOD_SECRET_HF_TOKEN}
+ARG HF_TOKEN
+ENV HUGGINGFACE_HUB_TOKEN=${HF_TOKEN}
 
 # Устанавливаем huggingface-cli
 RUN pip install --no-cache-dir huggingface_hub[hf_transfer]
