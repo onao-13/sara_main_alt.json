@@ -39,5 +39,8 @@ RUN comfy model download \
     --relative-path models/lora \
     --filename Instagirlv2.0_lownoise.safetensors
 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 # --- RUN POD --- 
 CMD ["/entrypoint.sh"]
