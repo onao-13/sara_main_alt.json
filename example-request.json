@@ -1,0 +1,252 @@
+{
+  "input": {
+    "workflow": {
+      "1": {
+        "inputs": {
+          "filename": "wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "2": {
+        "inputs": {
+          "filename": "lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank32_bf16.safetensors",
+          "model": [
+            "28",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      },
+      "3": {
+        "inputs": {
+          "filename": "Instagirlv2.0_lownoise.safetensors",
+          "model": [
+            "2",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      },
+      "4": {
+        "inputs": {
+          "lora_name": "Instagirlv2.0_hinoise.safetensors",
+          "strength_model": 1,
+          "strength_clip": 1,
+          "model": [
+            "27",
+            0
+          ],
+          "clip": [
+            "6",
+            0
+          ]
+        },
+        "class_type": "LoraLoader",
+        "_meta": {
+          "title": "LoraLoader"
+        }
+      },
+      "5": {
+        "inputs": {
+          "filename": "wan2.2_t2v_high_noise_14B_fp8_scaled.safetensors"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "6": {
+        "inputs": {
+          "filename": "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+        },
+        "class_type": "CLIPLoader",
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "7": {
+        "inputs": {
+          "filename": "wan_2.1_vae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "8": {
+        "inputs": {
+          "value": 1088
+        },
+        "class_type": "EmptyHunyuanLatentVideo",
+        "_meta": {
+          "title": "EmptyHunyuanLatentVideo"
+        }
+      },
+      "9": {
+        "inputs": {
+          "text": "Vivid/over-saturated colors, overexposed, static, unclear details, subtitles, stylized, artwork, painting, still image, overall gray tone, worst quality, low quality, JPEG compression artifacts, ugly, damaged, extra fingers, poorly drawn hands, poorly drawn face, deformed, disfigured, misshapen limbs, fused fingers, motionless image, messy background, three legs, crowded background, sunburnt skin, rashy skin, red cheeks\nplastic skin, waxy texture, over-smoothing, blurry details, over-sharpened skin, unnatural pores, distorted face, deformed eyes, bad anatomy, extra limbs, low-resolution, overexposed skin, harsh highlights, anime style, doll-like features, glossy skin, oily plastic shine, jpeg artifacts, unrealistic lighting, uncanny valley, weird shadows, cartoon traits, excessive retouching, skin blur, bad shading\n\n",
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "10": {
+        "inputs": {
+          "text": "Instagirl, petite body, sitting on a cozy window seat overlooking a rainy evening street, wearing a soft heather-gray knit cardigan loosely draped over a simple white tank top, holding a warm ceramic mug with both hands, gold layered necklaces (cross and medallion) softly catching the muted ambient light, long messy dark brown wavy hair falling around a heart-shaped face, city lights reflecting in the window beside her, calm intimate mood, amateur cellphone quality with visible sensor noise and gentle HDR softness\n",
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "11": {
+        "inputs": {
+          "filename": "sara_lora_000002500.safetensors",
+          "model": [
+            "3",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      },
+      "12": {
+        "inputs": {
+          "samples": [
+            "14",
+            0
+          ],
+          "vae": [
+            "7",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "13": {
+        "inputs": {
+          "text": "enable",
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "10",
+            0
+          ],
+          "negative": [
+            "9",
+            0
+          ],
+          "latent_image": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "KSamplerAdvanced",
+        "_meta": {
+          "title": "KSamplerAdvanced"
+        }
+      },
+      "14": {
+        "inputs": {
+          "text": "enable",
+          "model": [
+            "11",
+            0
+          ],
+          "positive": [
+            "10",
+            0
+          ],
+          "negative": [
+            "9",
+            0
+          ],
+          "latent_image": [
+            "13",
+            0
+          ]
+        },
+        "class_type": "KSamplerAdvanced",
+        "_meta": {
+          "title": "KSamplerAdvanced"
+        }
+      },
+      "15": {
+        "inputs": {
+          "anything": [
+            "12",
+            0
+          ]
+        },
+        "class_type": "easy cleanGpuUsed",
+        "_meta": {
+          "title": "easy cleanGpuUsed"
+        }
+      },
+      "26": {
+        "inputs": {
+          "filename_prefix": "ComfyUI",
+          "images": [
+            "15",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "27": {
+        "inputs": {
+          "filename": "WAN2.2-HighNoise_SmartphoneSnapshotPhotoReality_v3_by-AI_Characters.safetensors",
+          "model": [
+            "5",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      },
+      "28": {
+        "inputs": {
+          "filename": "WAN2.2-LowNoise_SmartphoneSnapshotPhotoReality_v3_by-AI_Characters.safetensors",
+          "model": [
+            "1",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      }
+    }
+  }
+}
