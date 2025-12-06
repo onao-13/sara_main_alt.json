@@ -15,4 +15,5 @@ hf download ananona/dependencies \
     WAN2.2-LowNoise_SmartphoneSnapshotPhotoReality_v3_by-AI_Characters.safetensors \
     --local-dir /comfyui/models/lora;
 
-python /src/entrypoint.py
+echo "Starting Runpod ComfyUI worker..."
+python -u /src/worker.py
