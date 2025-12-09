@@ -16,4 +16,4 @@ hf download ananona/dependencies \
     --local-dir /comfyui/models/lora;
 
 echo "Starting Runpod ComfyUI worker..."
-exec python /src/worker.py
+exec /entrypoint.sh "$@"
