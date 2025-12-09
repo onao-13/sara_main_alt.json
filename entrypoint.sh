@@ -1,6 +1,6 @@
 # --- Login to Hugginface ---
-curl -LsSf https://hf.co/cli/install.sh | bash;
-hf auth login --token ${HF_TOKEN}
+set -e;
+hf auth login --token ${HF_TOKEN};
 
 # --- PRIVATE MODELS THROUGH HUGGINGFACE-CLI ---
 hf download ananona/dependencies \
@@ -16,4 +16,4 @@ hf download ananona/dependencies \
     --local-dir /comfyui/models/lora;
 
 echo "Starting Runpod ComfyUI worker..."
-python -u /src/worker.py
+exec python /src/worker.py
