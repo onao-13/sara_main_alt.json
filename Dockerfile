@@ -39,8 +39,8 @@ RUN comfy model download \
     --relative-path models/lora \
     --filename Instagirlv2.0_lownoise.safetensors
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY setup.sh /setup.sh
+RUN chmod +x /setup.sh
 
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
