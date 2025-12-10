@@ -30,12 +30,12 @@ RUN comfy model download \
     --filename wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors
 
 RUN comfy model download \
-    --url https://huggingface.co/ibuildproducts/instagirlv2/blob/main/Instagirlv2.0_hinoise.safetensors \
+    --url https://huggingface.co/ibuildproducts/instagirlv2/resolve/main/Instagirlv2.0_hinoise.safetensors \
     --relative-path models/loras \
     --filename Instagirlv2.0_hinoise.safetensors
 
 RUN comfy model download \
-    --url https://huggingface.co/ibuildproducts/instagirlv2/blob/main/Instagirlv2.0_lownoise.safetensors \
+    --url https://huggingface.co/ibuildproducts/instagirlv2/resolve/main/Instagirlv2.0_lownoise.safetensors \
     --relative-path models/loras \
     --filename Instagirlv2.0_lownoise.safetensors
 
