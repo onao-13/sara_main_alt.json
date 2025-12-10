@@ -16,7 +16,7 @@ RUN comfy model download \
 
 RUN comfy model download \
     --url https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank32_bf16.safetensors \
-    --relative-path models/lora \
+    --relative-path models/loras \
     --filename lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank32_bf16.safetensors
 
 RUN comfy model download \
@@ -31,12 +31,12 @@ RUN comfy model download \
 
 RUN comfy model download \
     --url https://huggingface.co/ibuildproducts/instagirlv2/blob/main/Instagirlv2.0_hinoise.safetensors \
-    --relative-path models/lora \
-    --filename instagirlv2/blob/main/Instagirlv2.0_hinoise.safetensors
+    --relative-path models/loras \
+    --filename Instagirlv2.0_hinoise.safetensors
 
 RUN comfy model download \
     --url https://huggingface.co/ibuildproducts/instagirlv2/blob/main/Instagirlv2.0_lownoise.safetensors \
-    --relative-path models/lora \
+    --relative-path models/loras \
     --filename Instagirlv2.0_lownoise.safetensors
 
 COPY setup.sh /setup.sh
