@@ -17,6 +17,4 @@ hf download ananona/dependencies \
 
 echo "Starting Runpod ComfyUI worker..."
 
-ls -a
-
-exec /src/start.sh
+exec start.sh
