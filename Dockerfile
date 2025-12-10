@@ -45,4 +45,4 @@ RUN chmod +x /setup.sh
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 # --- RUN POD --- 
-ENTRYPOINT ["/setup.sh"]
+CMD ["/setup.sh"]

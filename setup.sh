@@ -14,7 +14,3 @@ hf download ananona/dependencies \
 hf download ananona/dependencies \
     WAN2.2-LowNoise_SmartphoneSnapshotPhotoReality_v3_by-AI_Characters.safetensors \
     --local-dir /comfyui/models/lora;
-
-echo "Starting Runpod ComfyUI worker..."
-
-exec start.sh
