@@ -19,7 +19,7 @@ ls -a
 
 echo "Starting ComfyUI"
 
-python -u /comfyui/main.py --disable-auto-launch --disable-metadata--log-stdout &
+python -u /comfyui/main.py --disable-auto-launch --disable-metadata --log-stdout &
 
 echo "Starting ComfyUI Handler"
 python -u /handler.py
